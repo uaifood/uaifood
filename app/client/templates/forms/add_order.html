@@ -1,0 +1,33 @@
+<template name="addOrder">
+  <div id="add-order">
+    <h3>Adicionar pedido</h3>
+
+    <form>
+      <p>
+        <select name="restaurant" id="restaurant">
+          <option selected>Selecione o restaurante</option>
+          <option value="0">Comida que cuida</option>
+          <option value="1">Mix Natural</option>
+          <option value="2">Xis Moita</option>
+          <option value="3">Granja Medina LTDA</option>
+          <option value="4">Bauru do Porto</option>
+          <option value="5">Mantra (cash only)</option>
+          <option value="6">test restaurant</option>
+          <option value="7">Torta de Sorvete</option>
+          <option value="8">[BH] Light Gourmet</option>
+          <option value="9">Brasileirinho</option>
+        </select>
+      </p>
+
+      <p><input type="text" name="my-name" placeholder="Qual o seu nome?" id="my-name" /></p>
+
+      <p><input type="text" name="delivery-fee" placeholder="Taxa de entrega" id="delivery-fee" /></p>
+
+      <p><input type="text" name="closing" placeholder="Que horas esse pedido fecha?" id="closing" /></p>
+
+      <p><input type="text" name="estimating" placeholder="Qual a estimativa de entrega?" id="estimating" /></p>
+
+      <p class="center"><input type="submit" class="button" value="Adicionar"></p>
+    </form>
+  </div>
+</template>

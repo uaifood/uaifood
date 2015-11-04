@@ -1,0 +1,26 @@
+$button-color: #E8655C;
+$button-hover-color: #D45148;
+
+@mixin button {
+	display: inline-block;
+	color: #fff;
+	background: $button-color;
+	padding: 6px 12px;
+	border-radius: 4px;
+	text-decoration: none;
+}
+
+a.button {
+  @include button;
+}
+
+input.button {
+  @include button;
+	border: none;
+	font-size: 16px;
+}
+
+a.button:hover, input.button:hover {
+	background: $button-hover-color;
+	cursor: pointer;
+}

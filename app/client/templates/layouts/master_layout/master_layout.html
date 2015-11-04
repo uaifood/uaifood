@@ -1,3 +1,41 @@
 <template name="MasterLayout">
+  <header>
+    <div class="container">
+      <h1 id="logo"><a href="/"><strong>uai</strong>Food</a></h1>
+    </div>
+  </header>
+
+  <section id="menu">
+    <div class="container">
+      <ul>
+        <li><a id="order-something" class="button" href="#">Criar um pedido</a></li>
+        <li><a id="add-restaurant-button" class="button" href="#">Adicionar restaurante</a></li>
+      </ul>
+    </div>
+  </section>
+
   {{> yield}}
+
+  <footer>
+		<div class="container">
+			<div>
+				<p>Made in Minas, uai!</p>
+				<p>Por <a href="http://leandro.io/">Leandro Alonso</a> at <a href="https://www.thoughtworks.com/">ThoughtWorks</a></p>
+			</div>
+		</div>
+	</footer>
+  
+  <div id="forms">
+    <div class="container">
+      <div id="box" class="grid6">
+        <div>
+          <span class="close"></span>
+
+          {{> addRestaurant }}
+
+          {{> addOrder }}
+        </div>
+      </div>
+    </div>
+  </div>
 </template>

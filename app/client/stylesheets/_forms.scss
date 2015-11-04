@@ -1,0 +1,62 @@
+#forms > .container {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#forms {
+	display: none;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .7);
+}
+
+#forms h3 {
+	margin: 0;
+	text-align: center;
+}
+
+#box {
+	background: #fff;
+	margin: 0 auto;
+	border-radius: 5px;
+}
+
+#box input[type=text] {
+	border: none;
+	font: 14px 'Open Sans', sans-serif;
+	width: 100%;
+	padding: 8px 12px;
+	outline: none;
+	background: #f2f2f2;
+	border-radius: 5px;
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+
+#box select {
+	width: 100%;
+	font-size: 16px;
+}
+
+#box > div {
+	position: relative;
+	padding: 20px;
+}
+
+.close {
+	display: block;
+	width: 30px;
+	height: 30px;
+	background: url('/img/closebox.png') no-repeat;
+	position: absolute;
+	right: -10px;
+	top: -10px;
+	cursor: pointer;
+}
+
+#add-restaurant, #add-order {
+  display: none;
+}

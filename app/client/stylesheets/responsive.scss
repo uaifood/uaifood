@@ -1,0 +1,67 @@
+/* Smartphones (portrait and landscape) */
+
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+@media only screen and (max-device-width : 600px), only screen and (max-width : 600px) {
+	
+	.is-desktop {
+		display: none;
+	}
+	
+	.is-mobile {
+		display: inline-block !important;
+	}
+	
+	.many, .closes, .delivery {
+		font-size: 12px;
+		background-size: 14px auto !important;
+		padding-left: 20px !important;
+	}
+	
+	.many {
+		display: none !important;
+	}
+	
+	.home-list .who-mobile {
+		display: block !important;
+		background-position: 0 2px;
+		margin: 0 15px 0 90px;
+		font-size: 12px;
+	}
+	
+	.who {
+		margin: 2px 0 !important;
+	}
+	
+	#closed .home-list .many, #closed .home-list .closes {
+		display: inline-block !important;
+	}
+	
+	#closed .home-list .delivery {
+		display: none !important;
+	}
+	
+	#menu .container {
+		padding: 0 !important;
+	}
+	
+	#menu li:first-child {
+		margin-bottom: 10px;
+	}
+	
+	#box {
+		width: 90% !important;
+	}
+	
+}
+
+@media only screen and (min-device-width : 601px), only screen and (min-width : 601px) {
+	
+	.is-mobile {
+		display: none;
+	}
+	
+}

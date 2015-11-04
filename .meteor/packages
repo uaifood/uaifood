@@ -20,3 +20,4 @@ insecure                # Allow all DB writes from clients (for prototyping)
 iron:router
 sanjo:jasmine
 velocity:console-reporter
+fourseven:scss

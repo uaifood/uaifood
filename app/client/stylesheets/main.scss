@@ -1,0 +1,20 @@
+/*****************************************************************************/
+/* main: Style */
+/*****************************************************************************/
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #f2f2f2;
+	color: #333;
+}
+
+.center {
+  text-align: center;
+}
+
+@import "_header.scss";
+@import "_menu.scss";
+@import "_buttons.scss";
+@import "_footer.scss";
+@import "_forms.scss";
