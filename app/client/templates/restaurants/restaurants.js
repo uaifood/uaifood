@@ -5,3 +5,9 @@ Template.restaurants.helpers({
     return Restaurants.find({});
   }
 });
+
+Template.restaurants.events({
+  'click .delete': (e) => {
+    Meteor.call('removeRestaurant', e.currentTarget.id);
+  }
+});

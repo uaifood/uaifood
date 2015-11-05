@@ -2,23 +2,23 @@
   <div id="add-order">
     <h3>Adicionar pedido</h3>
 
-    <form>
+    <form id="add-order-form">
       <p>
         <select name="restaurant" id="restaurant" required>
-          <option selected>Selecione o restaurante</option>
+          <option value="" selected>Selecione o restaurante</option>
           {{#each restaurants}}
             <option value="{{_id}}">{{name}}</option>
           {{/each}}
         </select>
       </p>
 
-      <p><input type="text" name="my-name" placeholder="Qual o seu nome?" id="my-name" required /></p>
+      <p><input type="text" name="by" placeholder="Qual o seu nome?" id="by" required /></p>
 
-      <p><input type="text" name="delivery-fee" placeholder="Taxa de entrega" id="delivery-fee" required /></p>
+      <p><input type="text" name="deliveryfee" placeholder="Taxa de entrega" id="deliveryfee" required /></p>
 
-      <p><input type="text" name="closing" placeholder="Que horas esse pedido fecha?" id="closing" required /></p>
+      <p><input type="text" name="closing" placeholder="Que horas esse pedido fecha?" id="closing" class="datetime-input" required /></p>
 
-      <p><input type="text" name="estimating" placeholder="Qual a estimativa de entrega?" id="estimating" required /></p>
+      <p><input type="text" name="estimating" placeholder="Qual a estimativa de entrega?" id="estimating" class="datetime-input" required /></p>
 
       <p class="center"><input type="submit" class="button" value="Adicionar"></p>
     </form>

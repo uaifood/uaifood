@@ -1,7 +1,14 @@
 <template name="restaurants">
   <ul>
   {{#each restaurants}}
-    <li>{{> restaurantInfo}}</li>
+    <li>
+      {{name}}
+      {{phone}}
+      {{deliveryFee}}
+      {{image}}
+      {{menu}}
+      <span id="{{_id}}" class="delete">Remover</span>
+    </li>
   {{/each}}
   </ul>
 </template>
