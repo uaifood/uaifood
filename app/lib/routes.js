@@ -10,3 +10,10 @@ Router.route('/', {
   controller: 'HomeController',
   where: 'client'
 });
+
+Router.route('restaurants', {
+  path: '/restaurants/',
+  data: function() {
+    return Restaurants.find({});
+  }
+});

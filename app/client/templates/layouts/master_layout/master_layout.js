@@ -1,6 +1,3 @@
-Template.MasterLayout.helpers({
-});
-
 Template.MasterLayout.events({
   'click #add-restaurant-button': () => {
     $('#forms').css('display', 'table');
