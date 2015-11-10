@@ -17,3 +17,10 @@ Router.route('restaurants', {
     return Restaurants.find({});
   }
 });
+
+Router.route('order', {
+  path: '/order/:orderId',
+  data: function() {
+    return Orders.find(this.params.orderId);
+  }
+});

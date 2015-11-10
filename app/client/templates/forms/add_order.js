@@ -10,8 +10,8 @@ Template.addOrder.events({
       restaurantId: event.target.restaurant.value,
       by: event.target.by.value,
       deliveryFee: parseFloat(event.target.deliveryfee.value.replace(',', '.').replace('R$', '')),
-      closes: new Date(event.target.closing.value),
-      delivery: new Date(event.target.estimating.value)
+      closes: new Date(event.target.closing.value.replace(/(\d*)\/(\d*)/, '$2/$1')),
+      delivery: new Date(event.target.estimating.value.replace(/(\d*)\/(\d*)/, '$2/$1'))
     }
 
     Meteor.call('addOrder', order,

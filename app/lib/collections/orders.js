@@ -1,4 +1,9 @@
-Orders = new Mongo.Collection('orders');
+Orders = new Mongo.Collection('orders', {
+  transform: (doc) => {
+    doc.restaurant = Restaurants.findOne(doc.restaurantId);
+    return doc;
+  }
+});
 
 Meteor.methods({
 

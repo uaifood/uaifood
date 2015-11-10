@@ -2,7 +2,11 @@ Meteor.subscribe("orders");
 
 Template.Home.helpers({
   orders: () => {
-    return Orders.find({});
+    return Orders.find({"closes": { $gte : new Date() }}, {sort: {'closes': -1}});
+  },
+
+  expired: () => {
+    return Orders.find({"closes": { $lt : new Date() }}, {sort: {'closes': -1}});
   }
 });
 /*****************************************************************************/
@@ -10,7 +14,7 @@ Template.Home.helpers({
 /*****************************************************************************/
 Template.Home.events({
   'click .order': (event) => {
-    window.location.pathname = `/order/${event.target.id.replace('order-', '')}/`;
+    window.location.pathname = `/order/${event.currentTarget.id.replace('order-', '')}/`;
   }
 });
 

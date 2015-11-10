@@ -1,0 +1,35 @@
+<template name="closedOrderInfo">
+  <li>
+    <div class="img">
+      {{#if restaurant.image}}
+      <img src="{{restaurant.image}}" alt="" style="width:70px;border-radius:100px;" />
+      {{else}}
+      <img src="/img/pizza-icon.png" alt="" style="width:70px;border-radius:100px;" />
+      {{/if}}
+    </div>
+    
+    <div class="is-mobile who-mobile">
+      {{by}} pediu
+    </div>
+    
+    <div class="who">
+      <span class="is-desktop"><strong>{{by}}</strong> pediu no</span> <strong>{{restaurant.name}}</strong>
+    </div>
+    
+    <div class="break"></div>
+    
+    <div class="closes">
+      01/11
+    </div>
+    
+    <div class="many">
+      16 pessoas <span class="is-desktop">pediram</span>
+    </div>
+    
+    <div class="delivery">
+      <span class="is-desktop">Entregue às</span> 11h30
+    </div>
+    
+    <div class="clear"></div>
+  </li>
+</template>

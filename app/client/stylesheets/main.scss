@@ -18,6 +18,11 @@ body {
 	display: block !important;
 }
 
+h3 {
+	font-weight: 400;
+	color: #E8655C;
+}
+
 @import "_header.scss";
 @import "_menu.scss";
 @import "_buttons.scss";
