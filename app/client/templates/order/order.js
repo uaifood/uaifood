@@ -8,7 +8,8 @@ Template.Order.helpers({
   },
 
   individualFee: () => {
-    return Session.get('deliveryFee') / Session.get('itemsCount');
+    fee = Session.get('deliveryFee') / Session.get('itemsCount');
+    return (fee == Infinity ? 0 : fee);
   },
 
   individualPrice: (individualFee, cost) => {
