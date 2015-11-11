@@ -1,0 +1,13 @@
+<template name="addItem">
+  <form id="add-item">
+    <p><input type="text" name="name" value="" placeholder="Qual seu nome?" /></p>
+
+    <p><input type="text" name="what" value="" placeholder="O que você quer??" /></p>
+
+    <p><input type="text" name="cost" value="" placeholder="Quanto custa?" /></p>
+
+    <input type="hidden" name="orderId" value="{{_id}}" />
+
+    <p><input type="submit" class="button" value="Adicionar"></p>
+  </form>
+</template>

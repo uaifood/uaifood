@@ -1,3 +1,15 @@
 <template name="Order">
-  Order :D
+  {{by}}
+  {{total deliveryFee}}
+  {{individualFee}}
+  {{closes}}
+  {{delivery}}
+  <p>
+    {{> addItem}}
+  </p>
+  <ul>
+    {{#each items}}
+      <li>{{name}} - {{what}} - {{cost}} - {{individualFee}} - {{individualPrice cost individualFee}} - <span id="{{_id}}" class="delete">Remover</span></li>
+    {{/each}}
+  </ul>
 </template>

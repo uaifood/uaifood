@@ -21,6 +21,8 @@ Router.route('restaurants', {
 Router.route('order', {
   path: '/order/:orderId',
   data: function() {
-    return Orders.find(this.params.orderId);
+    order = Orders.findOne(this.params.orderId);
+    if (order) Session.set('deliveryFee', order.restaurant.deliveryFee);
+    return order;
   }
 });
