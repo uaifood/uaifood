@@ -12,6 +12,8 @@ Template.addItem.events({
         if (error) {
           alert('Preencha os valores corretamente!');
           console.log(error);
+        } else {
+          $('#add-item')[0].reset();
         }
       });
     return false;

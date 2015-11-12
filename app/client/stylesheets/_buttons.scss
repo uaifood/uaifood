@@ -8,6 +8,7 @@ $button-hover-color: #D45148;
 	padding: 6px 12px;
 	border-radius: 4px;
 	text-decoration: none;
+  outline: none;
 }
 
 a.button {
@@ -23,4 +24,14 @@ input.button {
 a.button:hover, input.button:hover {
 	background: $button-hover-color;
 	cursor: pointer;
+}
+
+span.button-red {
+  @include button;
+  background: #DB4437;
+  cursor: pointer;
+}
+
+span.button-red:hover {
+  background: #B90504;
 }

@@ -1,0 +1,51 @@
+#order {
+
+  margin-bottom: 40px;
+
+  .order-something {
+
+    padding-top: 0;
+    padding-bottom: 0;
+  
+    p {
+      width: 28%;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    p:last-child {
+      width: 12%;
+      text-align: center;
+    }
+
+  }
+
+  .header {
+    margin-bottom: -18px;
+
+    p {
+      display: inline-block;
+      width: 16%;
+      font-weight: bold;
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  .item {
+    margin-bottom: -19px;
+
+    p:first-child {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    p {
+      display: inline-block;
+      width: 16%;
+      margin: 4px 0;
+      text-align: center;
+    }
+  }
+
+}
