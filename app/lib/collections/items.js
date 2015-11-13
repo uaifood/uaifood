@@ -11,10 +11,16 @@ Meteor.methods({
       cost: Number
     });
 
-    if (!Orders.find({_id: item.orderId})) {
+    order = Orders.findOne({_id: item.orderId});
+
+    if (!order) {
       throw new Meteor.Error(403, 'Invalid order');
     } else {
-      return Items.insert(item);
+      if (order.closes.getTime() < (new Date()).getTime()) {
+        throw new Meteor.Error(403, 'This order expired');
+      } else {
+        return Items.insert(item);
+      }
     }
   },
 

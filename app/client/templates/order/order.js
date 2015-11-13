@@ -19,6 +19,10 @@ Template.Order.helpers({
   total: (deliveryFee) => {
     return Items.find({orderId: Router.current().params.orderId})
               .fetch().reduce( (sum, item) => item.cost + sum, 0) + deliveryFee;
+  },
+
+  isOpened: (closes) => {
+    return closes.getTime() < (new Date()).getTime();
   }
 });
 

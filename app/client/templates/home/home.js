@@ -1,5 +1,9 @@
 Meteor.subscribe("orders");
 
+Handlebars.registerHelper('howMany', function (orderId) {
+    return Items.find({orderId: orderId}).count();
+});
+
 Template.Home.helpers({
   orders: () => {
     return Orders.find({"closes": { $gte : new Date() }}, {sort: {'closes': -1}});

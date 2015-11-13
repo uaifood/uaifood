@@ -1,6 +1,8 @@
 Orders = new Mongo.Collection('orders', {
   transform: (doc) => {
     doc.restaurant = Restaurants.findOne(doc.restaurantId);
+    doc.closesInFriendlyTime = friendlyTime(doc.closes);
+    doc.deliveryInFriendlyTime = estimatedTime(doc.delivery);
     return doc;
   }
 });
