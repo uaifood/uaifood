@@ -1,14 +1,43 @@
 <template name="restaurants">
-  <ul>
-  {{#each restaurants}}
-    <li>
-      {{name}}
-      {{phone}}
-      {{deliveryFee}}
-      {{image}}
-      {{menu}}
-      <span id="{{_id}}" class="delete">Remover</span>
-    </li>
-  {{/each}}
-  </ul>
+  <div class="container home-list">
+    
+    <ul id="restaurants">
+      {{#each restaurants}}
+      <li class="order" id="restaurant-{{_id}}">
+        <div class="img">
+          {{#if image}}
+          <img src="{{image}}" alt="" style="width:70px;border-radius:100px;" />
+          {{else}}
+          <img src="/img/pizza-icon.png" alt="" style="width:70px;border-radius:100px;" />
+          {{/if}}
+        </div>
+
+        <div class="who">
+          <strong>{{name}}</strong>
+        </div>
+
+        <div class="break"></div>
+
+        <div class="phone">
+          {{phone}}
+        </div>
+
+        <div class="total">
+          R$ {{deliveryFeeFormated deliveryFee}}
+        </div>
+
+        {{#if menu}}
+        <div class="menu">
+          <a href="{{menu}}">Menu</a>
+        </div>
+        {{/if}}
+
+        <div class="clear"></div>
+      </li>
+
+
+      {{/each}}
+    </ul>
+      
+  </div>
 </template>

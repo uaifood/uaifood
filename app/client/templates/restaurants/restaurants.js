@@ -3,6 +3,10 @@ Meteor.subscribe("restaurants");
 Template.restaurants.helpers({
   restaurants: () => {
     return Restaurants.find({});
+  },
+
+  deliveryFeeFormated: (deliveryFee) => {
+    return deliveryFee.toFixed(2);
   }
 });
 

@@ -7,13 +7,17 @@ Template.Order.helpers({
     return items;
   },
 
+  reverse: (items) => {
+    return items.fetch().reverse();
+  },
+
   individualFee: () => {
     fee = Session.get('deliveryFee') / Session.get('itemsCount');
-    return (fee == Infinity ? 0 : fee);
+    return (fee == Infinity ? 0 : Math.round(fee * 100) / 100);
   },
 
   individualPrice: (individualFee, cost) => {
-    return individualFee + cost;
+    return Math.round((individualFee + cost) * 100) / 100;
   },
 
   total: (deliveryFee) => {
@@ -22,12 +26,25 @@ Template.Order.helpers({
   },
 
   isOpened: (closes) => {
-    return closes.getTime() < (new Date()).getTime();
+    if (closes) return closes.getTime() < (new Date()).getTime();
+    return false;
+  },
+
+  cart: () => {
+    return mountOrder(this.items.fetch());
+  },
+
+  whoWithCommas: (who) => {
+    return who.join(', ');
   }
 });
 
 Template.Order.events({
   'click .delete': (e) => {
     Meteor.call('removeItem', e.currentTarget.id);
+  },
+
+  'click #see-order': (e) => {
+    Session.set('showOrder', true);
   }
 });

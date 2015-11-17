@@ -1,10 +1,10 @@
 <template name="addItem">
   <form id="add-item">
-    <p><input type="text" name="name" value="" placeholder="Qual seu nome?" /></p>
+    <p><input type="text" name="name" value="" placeholder="Qual seu nome?" required /></p>
 
-    <p><input type="text" name="what" value="" placeholder="O que você vai pedir?" /></p>
+    <p><input type="text" name="what" value="" placeholder="O que você vai pedir?" required /></p>
 
-    <p><input type="text" name="cost" value="" placeholder="Quanto custa?" /></p>
+    <p><input type="number" step="0.01" name="cost" value="" placeholder="Quanto custa?" required /></p>
 
     <input type="hidden" name="orderId" value="{{_id}}" />
 
