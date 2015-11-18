@@ -24,7 +24,7 @@
       </div>
 
       <div class="closes">
-        <span class="is-desktop">Termina em</span> {{closesInFriendlyTime}}
+      <span class="is-desktop">Termina em</span> <span class="friendly-time" data-time="{{closes}}">{{closesInFriendlyTime}}</span>
       </div>
 
       <div class="delivery">
@@ -42,15 +42,13 @@
       <div class="clear"></div>
     </li>
 
-    {{#unless isOpened closes}}
-    <li class="order-something">
-      {{> addItem}}
-    </li>
+    {{#unless displayOrder closes}}
+      <li id="see-order" style="text-align:center;cursor:pointer;opacity:.5;">Ver o resumo do pedido</li>
     {{/unless}}
 
-    {{#if isOpened closes}}
+    {{#if displayOrder closes}}
     <li>
-      <h3 style="margin:10px 0;">Resumo do pedido</h3>
+      <h3 style="margin:10px 0;" id="order-cart">Resumo do pedido</h3>
       {{#each cart}}
       <p style="border-bottom: 1px dashed #ccc;margin:0;padding:10px 0;">
       <strong style="color:#777;">{{amount}}</strong> <strong style="color:#9E9E9E;font-size:12px;">x</strong> {{name}}
@@ -60,6 +58,12 @@
       <p><strong>Total:</strong> R$ {{total deliveryFee}} <span style="display:inline-block!important;margin-left:15px;" class="phone">{{restaurant.phone}}</span></p>
     </li>
     {{/if}}
+
+    {{#unless isOpened closes}}
+    <li class="order-something">
+      {{> addItem}}
+    </li>
+    {{/unless}}
 
     <li class="header">
       <p>Quem?</p>
@@ -81,9 +85,5 @@
         <p><span id="{{_id}}" class="button-red delete">Remover</span></p>
       </li>
     {{/each}}
-
-    {{#unless isOpened closes OR showOrder}}
-      <li id="see-order" style="text-align:center;margin-top:40px;cursor:pointer;">Ver o resumo do pedido</li>
-    {{/unless}}
   </ul>
 </template>

@@ -74,6 +74,20 @@
 	margin-right: 15px;
 }
 
+.home-list .menu {
+	background: url('../img/menu.svg') no-repeat;
+	background-size: 18px auto;
+	padding-left: 25px;
+	background-position: 0 2px;
+	margin-right: 15px;
+}
+
+.home-list .menu a {
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
 /* Closed */
 
 #closed h3 {

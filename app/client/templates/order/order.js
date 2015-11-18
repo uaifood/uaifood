@@ -36,6 +36,12 @@ Template.Order.helpers({
 
   whoWithCommas: (who) => {
     return who.join(', ');
+  },
+
+  displayOrder: (closes) => {
+    isClosing = false;
+    if (closes) isClosing = closes.getTime() < (new Date()).getTime();
+    return isClosing || Session.get('showOrder');
   }
 });
 
