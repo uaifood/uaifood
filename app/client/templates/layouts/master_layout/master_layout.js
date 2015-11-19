@@ -2,17 +2,20 @@ Template.MasterLayout.events({
   'click #add-restaurant-button': () => {
     $('#forms').css('display', 'table');
     $('#add-restaurant').show();
+    $('#uai').addClass('blur');
     return false;
   },
   
   'click #order-something': () => {
     $('#forms').css('display', 'table');
     $('#add-order').show();
+    $('#uai').addClass('blur');
     return false;
   },
   
   'click .close': () => {
     $('#forms, #add-restaurant, #add-order').hide();
+    $('#uai').removeClass('blur');
   }
 });
 

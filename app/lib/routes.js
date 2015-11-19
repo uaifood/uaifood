@@ -8,18 +8,23 @@ Router.configure({
 Router.route('/', {
   name: 'home',
   controller: 'HomeController',
-  where: 'client'
+  where: 'client',
+  waitOn: function () {
+    // return one handle, a function, or an array
+    return Meteor.subscribe('restaurants');
+  }
 });
 
 Router.route('restaurants', {
-  path: '/restaurants/',
-  data: function() {
-    return Restaurants.find({});
-  }
+  path: '/restaurants/'
 });
 
 Router.route('order', {
   path: '/order/:orderId',
+  waitOn: function () {
+    // return one handle, a function, or an array
+    return Meteor.subscribe('orders');
+  },
   data: function() {
     order = Orders.findOne(this.params.orderId);
     if (order) Session.set('deliveryFee', order.restaurant.deliveryFee);
