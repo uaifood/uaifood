@@ -25,8 +25,9 @@ Template.Order.helpers({
               .fetch().reduce( (sum, item) => item.cost + sum, 0) + deliveryFee) * 100)) / 100;
   },
 
-  isOpened: (closes) => {
-    if (closes) return closes.getTime() < (new Date()).getTime();
+  isOpened: () => {
+    closes = Session.get('closes');
+    if (closes) return closes.getTime() > (new Date()).getTime();
     return false;
   },
 

@@ -28,6 +28,7 @@ Router.route('order', {
   data: function() {
     order = Orders.findOne(this.params.orderId);
     if (order) Session.set('deliveryFee', order.restaurant.deliveryFee);
+    if (order) Session.set('closes', order.closes);
     return order;
   }
 });

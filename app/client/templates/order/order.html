@@ -1,5 +1,5 @@
 <template name="Order">
-  <ul id="order" class="home-list">
+  <ul id="order" class="home-list {{#unless isOpened}}closed{{/unless}}">
     <li class="order" id="order-{{_id}}">
       <div class="img">
         {{#if restaurant.image}}
@@ -59,11 +59,11 @@
     </li>
     {{/if}}
 
-    {{#unless isOpened closes}}
+    {{#if isOpened}}
     <li class="order-something">
       {{> addItem}}
     </li>
-    {{/unless}}
+    {{/if}}
 
     <li class="header">
       <p>Quem?</p>
@@ -71,7 +71,9 @@
       <p>Quanto?</p>
       <p>Taxa de entrega</p>
       <p>Total</p>
+      {{#if isOpened}}
       <p>Apagar?</p>
+      {{/if}}
     </li>
 
     {{#each reverse items}}
@@ -82,7 +84,9 @@
         <p class="is-desktop">R$ {{cost}}</p>
         <p>R$ {{individualFee}}</p>
         <p>R$ {{individualPrice cost individualFee}}</p>
+        {{#if isOpened}}
         <p><span id="{{_id}}" class="button-red delete">Remover</span></p>
+        {{/if}}
       </li>
     {{/each}}
   </ul>
