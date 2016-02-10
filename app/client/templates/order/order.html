@@ -15,6 +15,9 @@
 
       <div class="who">
         <span class="is-desktop"><strong>{{by}}</strong> está pedindo no</span> <strong>{{restaurant.name}}</strong>
+        {{#if restaurant.menu}}
+        <a href="{{restaurant.menu}}" target="_blank"> (Ver cardápio) </a>
+        {{/if}}
       </div>
 
       <div class="break"></div>
