@@ -15,16 +15,19 @@
 
       <div class="who">
         <span class="is-desktop"><strong>{{by}}</strong> está pedindo no</span> <strong>{{restaurant.name}}</strong>
-        {{#if restaurant.menu}}
-        <a href="{{restaurant.menu}}" target="_blank"> (Ver cardápio) </a>
-        {{/if}}
       </div>
 
       <div class="break"></div>
 
       <div class="many">
-        {{items.count}} pessoas pediram
+        {{items.count}} pedidos
       </div>
+
+      {{#if restaurant.menu}}
+        <div class="menu">
+          <a href="{{restaurant.menu}}" target="_blank">Cardápio</a>
+        </div>
+      {{/if}}
 
       <div class="closes">
         <span class="is-desktop">Termina em</span> <span class="friendly-time" data-time="{{closes}}">{{closesInFriendlyTime}}</span>
@@ -40,7 +43,7 @@
 
       <div class="phone">
         {{restaurant.phone}}
-      </div>
+      </div> 
 
       <div class="clear"></div>
     </li>
